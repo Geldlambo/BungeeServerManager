@@ -107,7 +107,7 @@ public class ServerManagerCommand extends Command {
                     return;
                 }
 
-                ServerInfo info = ProxyServer.getInstance().constructServerInfo(args[1], new InetSocketAddress(22565), "", false, false);
+                ServerInfo info = ProxyServer.getInstance().constructServerInfo(args[1], new SocketAddress(22565), "", false);
                 ServerAddEvent addEvent = new ServerAddEvent(info, sender);
 
                 BungeeServerManager.get().getProxy().getPluginManager().callEvent(addEvent);
@@ -285,7 +285,7 @@ public class ServerManagerCommand extends Command {
                     info = modifiedEvent.getServerModified();
 
                     ServerHelper.removeServer(info.getName());
-                    ServerHelper.addServer(ProxyServer.getInstance().constructServerInfo(info.getName(), (InetSocketAddress) modifiedEvent.getNewValue(), info.getMotd(), false));
+                    ServerHelper.addServer(ProxyServer.getInstance().constructServerInfo(info.getName(), (SocketAddress) modifiedEvent.getNewValue(), info.getMotd(), false));
                     sender.sendMessage(TextComponent.fromLegacyText(prefix + "Set the ip address of " + ChatColor.GREEN + info.getName() + ChatColor.GRAY + " to " + ChatColor.GREEN + args[3] + ChatColor.GRAY + "."));
                     return;
                 }
@@ -406,7 +406,7 @@ public class ServerManagerCommand extends Command {
         sender.sendMessage(getHelpString("/svm edit " + serverName + " motd <motd>", "Change this server's motd"));
     }
 
-    private InetSocketAddress getIp(String input) {
+    private SocketAddress getIp(String input) {
         if (!input.contains(":") || !input.contains(".")) {
             return null;
         }
@@ -433,6 +433,6 @@ public class ServerManagerCommand extends Command {
             }
         }
 
-        return new InetSocketAddress(parts[0], Integer.valueOf(parts[1]));
+        return new SocketAddress(parts[0], Integer.valueOf(parts[1]));
     }
 }
