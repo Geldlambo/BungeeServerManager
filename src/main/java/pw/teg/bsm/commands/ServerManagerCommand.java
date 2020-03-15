@@ -406,7 +406,7 @@ public class ServerManagerCommand extends Command {
         sender.sendMessage(getHelpString("/svm edit " + serverName + " motd <motd>", "Change this server's motd"));
     }
 
-    private SocketAddress getIp(String input) {
+    private InetSocketAddress getIp(String input) {
         if (!input.contains(":") || !input.contains(".")) {
             return null;
         }
