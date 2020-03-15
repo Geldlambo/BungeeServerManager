@@ -16,7 +16,7 @@ public class ServerManagerAPI {
             return false;
         }
 
-        ServerInfo serverInfo = ProxyServer.getInstance().constructServerInfo(name, ipAddress, motd, restricted);
+        ServerInfo serverInfo = ProxyServer.getInstance().constructServerInfo(name, address, motd, restricted);
         ServerAddEvent addEvent = new ServerAddEvent(serverInfo, null);
 
         if (addEvent.isCancelled()) {
