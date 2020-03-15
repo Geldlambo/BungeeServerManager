@@ -6,6 +6,7 @@ import pw.teg.bsm.api.events.ServerAddEvent;
 import pw.teg.bsm.api.events.ServerRemoveEvent;
 import pw.teg.bsm.util.ServerHelper;
 
+import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 
 public class ServerManagerAPI {
