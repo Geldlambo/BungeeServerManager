@@ -433,6 +433,6 @@ public class ServerManagerCommand extends Command {
             }
         }
 
-        return new SocketAddress(parts[0], Integer.valueOf(parts[1]));
+        return new InetSocketAddress(parts[0], Integer.valueOf(parts[1]));
     }
 }
