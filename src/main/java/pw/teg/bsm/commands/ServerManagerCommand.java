@@ -14,6 +14,7 @@ import pw.teg.bsm.api.events.ServerRemoveEvent;
 import pw.teg.bsm.util.ServerHelper;
 
 import java.net.InetSocketAddress;
+import java.net.SocketAddress;
 
 public class ServerManagerCommand extends Command {
 
@@ -432,6 +433,6 @@ public class ServerManagerCommand extends Command {
             }
         }
 
-        return new InetSocketAddress(parts[0], Integer.valueOf(parts[1]));
+        return new SocketAddress(parts[0], Integer.valueOf(parts[1]));
     }
 }
