@@ -173,7 +173,7 @@ public class ServerManagerCommand extends Command {
                     return;
                 }
 
-                InetSocketAddress address = getIp(args[2]);
+                SocketAddress address = getIp(args[2]);
 
                 if (address == null) {
                     sender.sendMessage(TextComponent.fromLegacyText(prefix + "Invalid ip address " + ChatColor.GREEN + args[2] + ChatColor.GRAY + ". Here's an example: " + ChatColor.GREEN + "127.0.0.1:25565"));
