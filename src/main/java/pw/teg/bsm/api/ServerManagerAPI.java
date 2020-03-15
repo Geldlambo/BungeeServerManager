@@ -11,7 +11,7 @@ import java.net.SocketAddress;
 
 public class ServerManagerAPI {
 
-    public boolean addServer(String name, SocketAddress address, String motd, boolean restricted) {
+    public boolean addServer(String name, InetSocketAddress address, String motd, boolean restricted) {
         if (ServerHelper.getServerInfo(name) != null) {
             return false;
         }
