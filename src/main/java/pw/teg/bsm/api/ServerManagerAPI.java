@@ -6,11 +6,11 @@ import pw.teg.bsm.api.events.ServerAddEvent;
 import pw.teg.bsm.api.events.ServerRemoveEvent;
 import pw.teg.bsm.util.ServerHelper;
 
-import java.net.InetSocketAddress;
+import java.net.SocketAddress;
 
 public class ServerManagerAPI {
 
-    public boolean addServer(String name, InetSocketAddress ipAddress, String motd, boolean restricted) {
+    public boolean addServer(String name, SocketAddress ipAddress, String motd, boolean restricted) {
         if (ServerHelper.getServerInfo(name) != null) {
             return false;
         }
