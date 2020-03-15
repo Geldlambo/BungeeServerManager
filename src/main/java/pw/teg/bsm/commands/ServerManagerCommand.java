@@ -107,7 +107,7 @@ public class ServerManagerCommand extends Command {
                     return;
                 }
 
-                ServerInfo info = ProxyServer.getInstance().constructServerInfo(args[1], new InetSocketAddress(22565), "", false);
+                ServerInfo info = ProxyServer.getInstance().constructServerInfo(args[1], new SocketAddress(22565), "", false);
                 ServerAddEvent addEvent = new ServerAddEvent(info, sender);
 
                 BungeeServerManager.get().getProxy().getPluginManager().callEvent(addEvent);
